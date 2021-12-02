@@ -1,0 +1,10 @@
+
+*.class
+
+proj/proj0/out/production/proj0/.idea/
+
+proj/proj0/.idea/
+
+lab/lab1/out/production/lab1/.idea/
+
+lab/lab1/.idea/
