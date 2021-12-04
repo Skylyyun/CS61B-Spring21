@@ -5,7 +5,7 @@ import java.util.Observable;
 
 
 /** The state of a game of 2048.
- *  @author: Yiyun Lei
+ *  @author TODO: YOUR NAME HERE
  */
 public class Model extends Observable {
     /** Current contents of the board. */
@@ -113,6 +113,16 @@ public class Model extends Observable {
         // TODO: Modify this.board (and perhaps this.score) to account
         // for the tilt to the Side SIDE. If the board changed, set the
         // changed local variable to true.
+        for (int c = 0; c < board.size(); c++) {
+            for (int r = 0; r < board.size() ; r++) {
+                Tile t = board.tile(c, r);
+                if (board.tile(c, r)!= null) {
+                    board.move(c, 3, t);
+                    changed = true;
+                }
+            }
+        }
+
 
         checkGameOver();
         if (changed) {
@@ -137,7 +147,13 @@ public class Model extends Observable {
      *  Empty spaces are stored as null.
      * */
     public static boolean emptySpaceExists(Board b) {
-        // TODO: Fill in this function.
+        for (int col = 0;col < b.size();col++) {
+            for (int row = 0; row < b.size(); row++) {
+                if (b.tile(col, row) == null) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
@@ -147,7 +163,16 @@ public class Model extends Observable {
      * given a Tile object t, we get its value with t.value().
      */
     public static boolean maxTileExists(Board b) {
-        // TODO: Fill in this function.
+        for (int col = 0; col < b.size(); col++) {
+            for (int row = 0; row < b.size(); row++) {
+                if (b.tile(col, row) == null) {
+                    continue;
+                }
+                if (b.tile(col,row).value() == MAX_PIECE) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
@@ -158,7 +183,22 @@ public class Model extends Observable {
      * 2. There are two adjacent tiles with the same value.
      */
     public static boolean atLeastOneMoveExists(Board b) {
-        // TODO: Fill in this function.
+        final int INVALUABLE = 0;
+        // if board has empty space, return true.
+        if (emptySpaceExists(b)) {
+            return true;
+        }
+        // if board has no empty space.
+        for (int col = 0; col < b.size(); col++) {
+            for (int row = 0; row < b.size(); row++) {
+                int currentValue = b.tile(col, row).value();
+                int rightValue = col == b.size() - 1? INVALUABLE  : b.tile(col + 1, row).value();
+                int downValue = row == b.size() - 1? INVALUABLE  : b.tile(col, row + 1).value();
+                if (currentValue == rightValue || currentValue == downValue) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
