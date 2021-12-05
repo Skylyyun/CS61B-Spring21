@@ -14,5 +14,8 @@ project0    public boolean tilt(Side side);
 
 所以在下面的的case中加入这些即可
 
+![image-20211205163616114](C:/Users/leiyi/AppData/Roaming/Typora/typora-user-images/image-20211205163616114.png)
 
+![image-20211205163643992](C:\Users\leiyi\AppData\Roaming\Typora\typora-user-images\image-20211205163643992.png)
 
+![image-20211205163710292](CS61B_problem.assets/image-20211205163710292.png)
