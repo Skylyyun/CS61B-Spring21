@@ -13,3 +13,6 @@ project0    public boolean tilt(Side side);
 如上图所示，在中文系统中，由getkey() 读取的cnmd是“向上箭头”， “向下箭头” ，......
 
 所以在下面的的case中加入这些即可
+
+
+
