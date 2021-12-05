@@ -1,9 +1,11 @@
 
 *.class
 
-proj/proj0/out/production/proj0/.idea/
+proj/proj0/out/
 
 proj/proj0/.idea/
+
+proj/proj0/proj0.iml
 
 lab/lab1/out/production/lab1/.idea/
 
