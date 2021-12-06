@@ -25,7 +25,6 @@ lab/lab1/.idea/
 *.log
 *.ctxt
 .mtj.tmp/
-*.jar
 *.war
 *.ear
 *.zip
